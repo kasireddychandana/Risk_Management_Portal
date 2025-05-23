@@ -1,0 +1,329 @@
+.app-container {
+  width:100vw;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     
+  align-items: center;        
+  min-height: 100vh; 
+  font-family: Arial, sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+  padding:1rem;
+}
+
+.title {
+  margin-bottom: 20px;
+  color:darkorchid;
+}
+input[type="file"],
+input[type="text"],
+input[type="number"] {
+  max-width: 300px;
+}
+.dropdown-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  color:darkorchid;
+}
+
+.download-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+table {
+  width: 100vw;
+  max-width: 100%;
+  table-layout: auto;
+  border:1.5px solid black;
+  border-collapse:collapse;
+  margin-top: 10px;
+}
+th,
+td {
+  border:none;
+}
+
+input {
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 20px;
+  box-sizing: border-box;
+  place-items: center;
+}
+
+.download-btn {
+  padding: 10px 15px;
+  background-color:darkorchid;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background-color:rgb(171, 77, 218);
+}
+.table-wrapper{
+    width:100%;
+    overflow-x: auto;
+    max-width: 100%;
+    margin-right: 12.5px;
+}
+body{
+  overflow-x: hidden;
+}
+tbody,tr{
+  box-shadow:0 6px 16px rgba(181, 53, 111, 0.2);
+}
+tbody,tr:hover{
+  transform:translateY(2px);
+}
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  border: none;
+  background-color: transparent;
+}
+
+/* Table Header */
+thead {
+  background: rgba(10, 139, 183, 0.4);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  height:50px;
+}
+
+/* Watery bubble effect on each row */
+tbody tr {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(111, 166, 211, 0.5)
+  );
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+/* Optional hover shimmer */
+tbody tr:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(230, 250, 255, 0.8),
+    rgba(75, 112, 176, 0.6)
+  );
+}
+
+/* Cell styling */
+th,td {
+  border: none;
+  padding: 0px 20px;
+  text-align:center;
+  color: #7803874e;
+  font-weight: 500;
+  color:#055359
+}
+.hourglass-icon {
+  transition: transform 0.4s ease-in-out;
+  transform-origin: center;
+  margin-left: 8px;
+}
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px 40px 10px 16px;  /* right padding for icon */
+  border-radius: 25px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background: #f4f4f4;
+  color: #003366;
+  font-weight: 500;
+  cursor: pointer;
+  background-image: none;
+  width:180px;
+}
+
+.hourglass-icon {
+  position: absolute;
+  right: 14px;
+  top: 25%;
+  transform: translateY(-50%) rotate(0deg);
+  transform-origin: center;
+  transition: transform 0.4s ease-in-out;
+  pointer-events: none;
+}
+  .file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.upload-btn {
+  display: inline-block;
+  background-color: #ad1be3;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.upload-btn:hover {
+  background-color: #b939e7;
+}
+.file-upload{
+  display:flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+/* Add full-page spinning loader overlay */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid darkorchid;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Success Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h3 {
+  color: darkorchid;
+  margin-bottom: 1rem;
+}
+
+.modal-content button {
+  padding: 8px 16px;
+  background-color: darkorchid;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.modal-content button:hover {
+  background-color: rgb(171, 77, 218);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+input.error {
+  border: 1px solid #ff4444;
+  background-color: #fff8f8;
+}
+
+.error-message {
+  position: absolute;
+  right: 5px;
+  color: #ff4444;
+  cursor: help;
+  font-size: 16px;
+}
+
+.error-message:hover::after {
+  content: attr(title);
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+  margin-right: 10px;
+}
+
+.upload-btn {
+  position: relative;
+  cursor: pointer;
+}
+
+.upload-btn:hover::after {
+  content: "Upload CSV or XLSX file";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+  margin-bottom: 5px;
+}
